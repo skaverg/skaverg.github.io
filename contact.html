@@ -197,8 +197,10 @@
                     value="Send Message"
                     class="btn btn-primary"
                   />
-                  <h5 id="submitMessage" class="ml-2"></h5>
-                  <h5 id="submitErrorMessage" class="ml-2"></h5>
+                </div>
+                <div class="col-12 mt-2">
+                  <p id="submitMessage" class="mt-2"></p>
+                  <p id="submitErrorMessage" class="mt-2"></p>
                 </div>
               </div>
             </form>
@@ -263,8 +265,8 @@
           <div class="col-lg-4">
             <div class="widget">
               <p>
-                Azuma find out all the ways to enjoy modern and luxury
-                residential life around the world.
+                Azuma explores various avenues for experiencing modern luxury
+                residential living worldwide.
               </p>
               <p>RERA NO: PRM/KA/RERA/1251/446/AG/191015/001586</p>
             </div>
@@ -339,21 +341,20 @@
             if (xhr.status === 200) {
               document.querySelector("#submitErrorMessage").innerHTML = "";
               document.querySelector("#submitMessage").innerHTML =
-                "Thank you for contacting us, we will get back to you shortly.";
+                "Thank you for contacting us! Your details have been successfully submitted.<br/>Our team will reach out to you shortly to assist with your property needs.";
               document.getElementById("contactForm").reset();
             } else {
               document.querySelector("#submitMessage").innerHTML = "";
               document.querySelector("#submitErrorMessage").innerHTML =
-                "Oops! There was an error while submitting your query!";
+                "Oops! Looks like there was a fumble. Your details couldn't be submitted this time. Try again later or give us a shout at <span>+9591611600</span> or <span>haseeb@azumarealty.com</span> for a quick assistance!";
             }
           };
 
           xhr.onerror = function () {
             document.querySelector("#submitMessage").innerHTML = "";
             document.querySelector("#submitErrorMessage").innerHTML =
-              "Oops! There was an error while submitting your query!";
+              "Oops! Looks like there was a fumble. Your details couldn't be submitted this time. Try again later or give us a shout at <span>+9591611600</span> or <span>haseeb@azumarealty.com</span> for a quick assistance!";
           };
-
           xhr.send(jsonData);
         });
     </script>
